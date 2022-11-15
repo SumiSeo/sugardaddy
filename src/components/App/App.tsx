@@ -1,10 +1,13 @@
 import React from "react";
-import "../scss/main.scss";
+
+import "./App.scss";
 
 const App = (): JSX.Element => {
   return (
     <React.StrictMode>
-      <div className="container">App</div>
+      <div className="app">
+        <div className="app__container">App</div>
+      </div>
     </React.StrictMode>
   );
 };
