@@ -1,29 +1,27 @@
 import styled from "styled-components";
+import React, { useState } from "react";
 
 const Select = styled.select`
   font-size: 2rem;
 `;
 
-const Option = styled.option`
-  font-size: 1rem;
-`;
-
 const ExpensesManager = (): JSX.Element => {
+  const [type, setType] = useState("");
+  const [amount, setAmount] = useState("");
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <select name="choice">
-          <option value="banana">바나나</option>
-          <option value="apple">사과</option>
-          <option value="orange">오렌지</option>
+          <option value="transport">Transport</option>
+          <option value="grocery">Grocery</option>
+          <option value="shopping">Shopping</option>
         </select>
-        <Select>
-          <Option>hi</Option>
-          <Option>hi</Option>
-          <Option>hi</Option>
-        </Select>
-        <label>Amount </label>
-        <input type="text" />
+        <label>Amount</label>
+        <input onChange={(e) => console.log(e.target.value)} type="text" />
         <input type="submit" value="submit" />
       </form>
     </div>
