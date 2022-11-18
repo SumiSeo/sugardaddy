@@ -1,24 +1,35 @@
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
+
 interface RepositoriesState {
-  data: number[];
+  amount: number[];
+  expense: number[];
+  income: number[];
 }
 const initialState = {
-  data: [],
+  amount: [],
+  expense: [],
+  income: [],
 };
 
 const reducer = (
   state: RepositoriesState = initialState,
-  action: any
+  action: Action
 ): RepositoriesState => {
   switch (action.type) {
-    case "Expense":
+    case ActionType.ADD_EXPENSE:
       return {
         //I have to subtract expense money from sum
-        data: [],
+        expense: action.payload,
+        income: [],
+        amount: [],
       };
-    case "Income":
+    case ActionType.ADD_INCOME:
       return {
         //I have to add expense money from sum
-        data: [],
+        expense: action.payload,
+        income: [],
+        amount: [],
       };
     default:
       return state;
