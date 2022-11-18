@@ -19,17 +19,15 @@ const reducer = (
   switch (action.type) {
     case ActionType.ADD_EXPENSE:
       return {
-        //I have to subtract expense money from sum
-        expense: action.payload,
-        income: [],
-        amount: [],
+        expense: [...state.expense, action.payload],
+        income: [...state.income],
+        amount: [...state.amount],
       };
     case ActionType.ADD_INCOME:
       return {
-        //I have to add expense money from sum
-        expense: action.payload,
-        income: [],
-        amount: [],
+        expense: [...state.expense],
+        income: [...state.income, action.payload],
+        amount: [...state.amount],
       };
     default:
       return state;
