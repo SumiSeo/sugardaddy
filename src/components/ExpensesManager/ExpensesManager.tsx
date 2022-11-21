@@ -17,7 +17,7 @@ const ExpensesManager = (): JSX.Element => {
       <form onSubmit={onSubmit}>
         <select name="choice">
           <option value="transport">Transport</option>
-          <option value="grocery">Grocery</option>
+          <option value="grocery">Groceryyyy</option>
           <option value="shopping">Shopping</option>
         </select>
         <label>Amount</label>
