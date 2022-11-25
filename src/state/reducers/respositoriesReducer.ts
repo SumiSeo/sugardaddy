@@ -7,7 +7,7 @@ interface RepositoriesState {
   income: number[];
 }
 const initialState = {
-  amount: [],
+  amount: [0],
   expense: [],
   income: [],
 };

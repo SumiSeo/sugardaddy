@@ -1,27 +1,32 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-
-const Select = styled.select`
-  font-size: 2rem;
-`;
+import { useActions } from "../../hooks/useActions";
+import { useTypedSelector } from "../../hooks/useTypedSelectors";
 
 const ExpensesManager = (): JSX.Element => {
   const [type, setType] = useState("");
-  const [amount, setAmount] = useState("");
+  const [expense, setExpense] = useState("");
+  const { expensesRepositories } = useActions();
+  const { amount } = useTypedSelector((state) => state.repositories);
+  console.log(amount);
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const convertedAmount = parseInt(expense);
+    expensesRepositories(type, convertedAmount);
+    console.log(expensesRepositories);
   };
 
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <select name="choice">
+        <select onChange={(e) => setType(e.target.value)} name="choice">
           <option value="transport">Transport</option>
           <option value="grocery">Groceryyyy</option>
           <option value="shopping">Shopping</option>
         </select>
         <label>Amount</label>
-        <input onChange={(e) => console.log(e.target.value)} type="text" />
+        <input onChange={(e) => setExpense(e.target.value)} type="text" />
         <input type="submit" value="submit" />
       </form>
     </div>
