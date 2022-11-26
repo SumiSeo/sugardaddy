@@ -1,3 +1,39 @@
+@import "../../scss/variables";
+
 .navigator {
   padding: 7rem 4rem;
+  &__column {
+    &:first-child {
+      margin-bottom: 4rem;
+    }
+  }
+  &__username {
+    margin-top: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $default_white_font;
+  }
+  &__useremail {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $default_grey_font;
+  }
+  &__img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  &__links {
+  }
+  &__link {
+    margin-top: 1.8rem;
+    a {
+      color: $default_grey_font;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
 }
