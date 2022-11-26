@@ -34,6 +34,10 @@
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: 500;
+      &:hover,
+      &:active {
+        color: $default_white_font;
+      }
     }
   }
 }
