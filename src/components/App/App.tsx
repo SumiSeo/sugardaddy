@@ -1,22 +1,29 @@
+//dependencies
 import React from "react";
-import ExpensesManager from "../ExpensesManager/ExpensesManager";
+import { Provider } from "react-redux";
+import { store } from "../../state";
+
+//components
 import Navigator from "../Navigator/Navigator";
+import Container from "../Container/Container";
 
 import "./App.scss";
 
 const App = (): JSX.Element => {
   return (
     <React.StrictMode>
-      <div className="app">
-        <div className="app__container">
-          <div className="app_column">
-            <Navigator />
-          </div>
-          <div className="app_column">
-            <ExpensesManager />
+      <Provider store={store}>
+        <div className="app">
+          <div className="app__container">
+            <div className="app__column">
+              <Navigator />
+            </div>
+            <div className="app__column">
+              <Container />
+            </div>
           </div>
         </div>
-      </div>
+      </Provider>
     </React.StrictMode>
   );
 };
