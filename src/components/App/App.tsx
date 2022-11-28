@@ -5,7 +5,7 @@ import { store } from "../../state";
 
 //components
 import Navigator from "../Navigator/Navigator";
-import ExpensesManager from "../ExpensesManager/ExpensesManager";
+import Container from "../Container/Container";
 
 import "./App.scss";
 
@@ -15,11 +15,11 @@ const App = (): JSX.Element => {
       <Provider store={store}>
         <div className="app">
           <div className="app__container">
-            <div className="app_column">
+            <div className="app__column">
               <Navigator />
             </div>
-            <div className="app_column">
-              <ExpensesManager />
+            <div className="app__column">
+              <Container />
             </div>
           </div>
         </div>

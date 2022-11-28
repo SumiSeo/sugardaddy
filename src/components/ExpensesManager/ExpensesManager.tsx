@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import "./ExpensesManager.scss";
 import React, { useState } from "react";
 import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelectors";
@@ -18,17 +18,22 @@ const ExpensesManager = (): JSX.Element => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <select onChange={(e) => setType(e.target.value)} name="choice">
-          <option value="transport">Transport</option>
-          <option value="grocery">Groceryyyy</option>
-          <option value="shopping">Shopping</option>
-        </select>
-        <label>Amount</label>
-        <input onChange={(e) => setExpense(e.target.value)} type="text" />
-        <input type="submit" value="submit" />
-      </form>
+    <div className="expensesManager">
+      <div className="expensesManager__column">
+        <h1 className="expensesManager__amount">€ 480.2</h1>
+      </div>
+      <div className="expensesManager__column">
+        <form onSubmit={onSubmit}>
+          <select onChange={(e) => setType(e.target.value)} name="choice">
+            <option value="transport">Transport</option>
+            <option value="grocery">Groceryyyy</option>
+            <option value="shopping">Shopping</option>
+          </select>
+          <label>Amount</label>
+          <input onChange={(e) => setExpense(e.target.value)} type="text" />
+          <input type="submit" value="submit" />
+        </form>
+      </div>
     </div>
   );
 };

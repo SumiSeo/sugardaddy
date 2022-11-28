@@ -6,13 +6,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3rem;
+
   &__container {
+    border-radius: 2.5rem;
     width: 90%;
     height: 90%;
     color: $default_white_font;
-    border-radius: 3rem;
     background-color: $default_black_background;
     display: grid;
     grid-template-columns: 1fr 2.5fr;
+    overflow: hidden;
+  }
+  &__column {
+    &:last-child {
+      background-color: $default_grey_background;
+    }
   }
 }
