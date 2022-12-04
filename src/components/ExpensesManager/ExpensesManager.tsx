@@ -25,11 +25,15 @@ const ExpensesManager = (): JSX.Element => {
       <div className="expensesManager__column">
         <form onSubmit={onSubmit}>
           <select onChange={(e) => setType(e.target.value)} name="choice">
-            <option value="transport">Transport</option>
-            <option value="grocery">Groceryyyy</option>
-            <option value="shopping">Shopping</option>
+            <option value="1">Expense</option>
+            <option value="2">Income</option>
           </select>
-          <label>Amount</label>
+          <select onChange={(e) => setType(e.target.value)} name="choice">
+            <option value="1">Transport</option>
+            <option value="2">Grocery</option>
+            <option value="2">Hang out</option>
+            <option value="2">Facture</option>
+          </select>
           <input onChange={(e) => setExpense(e.target.value)} type="text" />
           <input type="submit" value="submit" />
         </form>
